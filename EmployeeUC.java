@@ -20,6 +20,7 @@ public class EmployeeUC
 	static int part_time_days1=0;
 	static String name1;
 	static int ra, days1, count, Pr_wage1, Part_wage1, Ab_wage1;
+//	static ArrayList<Employee> lst = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
 	public static void EmployeeUC() 
 	{
@@ -83,7 +84,6 @@ public class EmployeeUC
 		System.out.println("The part time total amount is :  "+totalpartval);
 	}
 	
-	
 	public static void EmpSwitchcase() {
 
 		Scanner sc = new Scanner(System.in);
@@ -126,7 +126,7 @@ public class EmployeeUC
 		ab = 0;
 
 	}
-	
+
 	public static void EmpCalMon() 
 	{
 		EmpSwitchcase();
@@ -139,9 +139,58 @@ public class EmployeeUC
 		System.out.println("the total days value "+totaldays);
 	}
 	
+	public static void MultipleComp() {
+	String name;
+	int ra, days, count;
+
+	Scanner sc = new Scanner(System.in);
+	System.out.print("How many companies :");
+	count = sc.nextInt();
+
+	for (int c = 1; c <= count; c++) {
+
+		System.out.print("\n\nEnter the company name :");
+		name = sc.next();
+		System.out.print("Enter number of working days :");
+		days = sc.nextInt();
+		System.out.print("Enter employee wage rate :");
+		ra = sc.nextInt();
+		System.out.println("\nThe company name is : " + name);
+
+		for (int i = 1; i <= days; i++) {
+			int emp = (int) Math.floor(Math.random() * 10 % 3);
+			switch (emp) {
+			case 0:
+				ab++;
+				break;
+			case 1:
+				pr++;
+				break;
+			case 2:
+				part_time_days1++;
+				break;
+
+			} 
+
+		} 
+		int prwage = ra * emphrs * pr;
+		int partwage = ra * part_time * part_time_days1; 
+		int abwage = ra * emphrs * ab; 
+	
+		System.out.println("The present days wage amount is : " + prwage);
+		System.out.println("The absent days is wage amount is : " + abwage);
+		System.out.println("The part time days wage wage amount is :" + partwage);
+				
+	}
+}
+	
+
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CalWagetotaluc6();
+		
+		MultipleComp();
+		
 		
 	}
 }
