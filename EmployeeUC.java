@@ -20,7 +20,7 @@ public class EmployeeUC
 	static int part_time_days1=0;
 	static String name1;
 	static int ra, days1, count, Pr_wage1, Part_wage1, Ab_wage1;
-//	static ArrayList<Employee> lst = new ArrayList<>();
+	static ArrayList<Employee> lst = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
 	public static void EmployeeUC() 
 	{
@@ -327,11 +327,28 @@ public class EmployeeUC
 		EmpArrList();
 	}
 	
+	public static void TotalWage() 
+	{
+		EmpArrList();
+		System.out.print("Press the number of companies :");
+		count = sc.nextInt();
+		Employee pos = lst.get(0);
+		pos.Display();
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		EmpArrList();
-		
+		//EmployeeUC()
+		//Empcalwage();
+		//EmpPartTime();
+		//EmpSwitchcase();
+		//EmpCalMon();
+		//CalWagetotaluc6();
+		//MultipleComp();
+		//TotalWageuc9();
+		//EmpArray();
+		//EmpArrList();
+		TotalWage();
 		
 	}
 }
