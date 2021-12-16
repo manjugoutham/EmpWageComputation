@@ -183,13 +183,16 @@ public class EmployeeUC
 				
 	}
 }
-	
+	public static void TotalWageuc9() 
+	{
+		MultipleComp();
+	}
 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		MultipleComp();
+		TotalWageuc9();
 		
 		
 	}
