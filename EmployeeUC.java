@@ -188,11 +188,92 @@ public class EmployeeUC
 		MultipleComp();
 	}
 
+	class Employee {
+
+		String name1;
+		int Ab_wage1;
+		int Part_wage1;
+		int Pr_wage1;
+		int pr;
+		int ab;
+		int part_time_days1;
+		int ra;
+
+		public Employee(String name1, int ra, int pr, int part_time_days1, int ab, int Pr_wage1,
+				int Part__wage1, int Ab_wage1)
+		{
+			this.name1 = name1;
+			this.ra = ra;
+			this.pr = pr;
+			this.part_time_days1 = part_time_days1;
+			this.ab = ab;
+			this.Pr_wage1 = Pr_wage1;
+			this.Part_wage1 = Part_wage1;
+			this.Ab_wage1 = Ab_wage1;
+		}
+
+		public void Display() 
+		{
+			System.out.println("\nCompany Name : " + name1 + "\nPrasent days : " + pr + "\nPartTime days : "
+					+ part_time_days1 + "\nAbsent days : " + ab + "\nPresent_wage1 : " + Pr_wage1
+					+ "\nPart_Time_wage1 : " + Part_wage1 + "\nAbsent_wage1 : " + Ab_wage1);
+
+		}
+	}
+	
+	public static void EmpArray() {
+
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Press the number of companies :");
+		count = sc.nextInt();
+		for (int j = 1; j <= count; j++) {
+			System.out.print("\n\nEnter the company name :");
+			name1 = sc.next();
+			System.out.print("Enter number of working days :");
+			days = sc.nextInt();
+			System.out.print("Enter employee wage rate :");
+			ra = sc.nextInt();
+			System.out.println("\nThe company name is : " + name1);
+
+			for (int i = 1; i <= days; i++) {
+				int emp1 = (int) Math.floor(Math.random() * 10 % 3);
+				switch (emp1) {
+				case 0:
+					ab++;
+					break;
+				case 1:
+					pr++;
+					break;
+				case 2:
+					part_time_days1++;
+					break;
+
+				}
+
+			}
+			Pr_wage1 = ra * emphrs * pr;
+			Part_wage1 = ra * part_time * part_time_days1;
+			Ab_wage1 = ra * emphrs * ab;
+
+			EmployeeUC emp = new EmployeeUC();
+			Employee[] arr = new Employee[count];
+
+			arr[j - 1] = emp.new Employee(name1, ra, pr, part_time_days1, ab, Pr_wage1, Part_wage1, Ab_wage1);
+			System.out.print("\n");
+			arr[j - 1].Display();
+
+			pr = 0;
+			ab = 0;
+			part_time_days1 = 0;
+		}
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		TotalWageuc9();
+		EmpArray();
 		
 		
 	}
