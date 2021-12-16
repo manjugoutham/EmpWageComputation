@@ -270,10 +270,62 @@ public class EmployeeUC
 		}
 	}
 	
+	public static void EmpArrList() 
+	{
+		Scanner sc = new Scanner(System.in);
+		EmployeeUC emp = new EmployeeUC();
+		
+		ArrayList<Employee> lst = new ArrayList<>();
+		System.out.print("Press the number of companies  :");
+		count = sc.nextInt();
+
+		for (int j = 1; j <= count; j++) {
+			System.out.print("\n\nEnter the company name :");
+			name1 = sc.next();
+			System.out.print("Enter number of working days :");
+			days = sc.nextInt();
+			System.out.print("Enter employee wage rate :");
+			ra = sc.nextInt();
+			System.out.println("\nThe company name is : " + name1);
+
+			for (int i = 1; i <= days; i++) {
+				int val = (int) Math.floor(Math.random() * 10 % 3);
+				switch (val) {
+				case 0:
+					ab++;
+					break;
+				case 1:
+					pr++;
+					break;
+				case 2:
+					part_time_days1++;
+					break;
+
+				}
+
+			}
+			Pr_wage1 = ra * emphrs * pr;
+			Part_wage1 = ra * part_time * part_time_days1;
+			Ab_wage1 = ra * emphrs * ab;
+			
+			Employee Data = emp.new Employee(name1, ra, pr, part_time_days1, ab, Pr_wage1, Part_wage1, Ab_wage1);
+			lst.add(Data);
+			pr = 0;
+			ab = 0;
+			part_time_days1 = 0;
+		}
+		
+		for (Employee em : lst) 
+		{
+			em.Display();
+		}
+
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		EmpArray();
+		EmpArrList();
 		
 		
 	}
